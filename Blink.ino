@@ -33,7 +33,7 @@ void setup() {
 void loop() {
   //n
   digitalWrite(LED_BUILTIN, HIGH); // turn the LED on (HIGH is the voltage level)
-  Serial.println("hello"); 
+  Serial.println("this is barb nation"); 
   delay(2000);                      // wait for a second
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
   delay(1000);    
