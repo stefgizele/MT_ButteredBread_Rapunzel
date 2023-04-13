@@ -1,141 +1,23 @@
-/*
-  Blink
+int buttonVal;
 
-  Turns an LED on for one second, then off for one second, repeatedly.
+#include <Servo.h>
 
-  Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO
-  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN is set to
-  the correct LED pin independent of which board is used.
-  If you want to know what pin the on-board LED is connected to on your Arduino
-  model, check the Technical Specs of your board at:
-  https://www.arduino.cc/en/Main/Products
+Servo myservo; //creating servo variable
+const int buttonPin= 10;
 
-  modified 8 May 2014
-  by Scott Fitzgerald
-  modified 2 Sep 2016
-  by Arturo Guadalupi
-  modified 8 Sep 2016
-  by Colby Newman
-
-  This example code is in the public domain.
-
-  https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink
-*/
-
-// the setup function runs once when you press reset or power the board
 void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
-  Serial.begin(9600);
+ myservo.attach(9); //attaching servo to pin 9 or wtv pin
+ pinMode(buttonPin, INPUT);
 }
 
-// the loop function runs over and over again forever
 void loop() {
-  //n
-  digitalWrite(LED_BUILTIN, HIGH); // turn the LED on (HIGH is the voltage level)
-  Serial.println("this is barb nation"); 
-  delay(2000);                      // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
-  delay(1000);    
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100);   
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(2000);             // wait for a second
-  //i
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100);
-  digitalWrite(LED_BUILTIN, LOW);  
-  delay(1000);
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(2000);
-  //c
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(2000);                    
-  digitalWrite(LED_BUILTIN, LOW);  
-  delay(1000);    
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100); 
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(2000);                    
-  digitalWrite(LED_BUILTIN, LOW);  
-  delay(1000);    
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100); 
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(2000);
-  //k
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(2000);                    
-  digitalWrite(LED_BUILTIN, LOW);  
-  delay(1000);    
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100); 
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(2000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(2000);  
-  //i
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100);
-  digitalWrite(LED_BUILTIN, LOW);  
-  delay(1000);
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(2000);       
-  //m
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(2000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);  
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(2000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(2000);     
-  //i
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100);
-  digitalWrite(LED_BUILTIN, LOW);  
-  delay(1000);
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(2000); 
-  //n
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(2000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(2000);
-  //a
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(2000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(2000);
-  //j
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(100);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(2000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(2000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(2000);
+  buttonVal = digitalRead(buttonPin);
+
+ if(digitalRead(buttonPin)== HIGH){
+   myservo.write(90); //telling servo what angle to turn
+
+ } else {
+   myservo.write(0);
+ }
+
 }
