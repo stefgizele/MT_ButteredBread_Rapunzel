@@ -33,10 +33,10 @@ void loop() {
   button1Val = digitalRead(button1Pin);
 
  if(digitalRead(button1Pin)== HIGH){
-   myservo1.write(90); //telling servo what angle to turn
+   myservo1.write(0); //telling servo what angle to turn
 
  } else {
-   myservo1.write(0);
+   myservo1.write(90);
  }
 
  //prince love interaction
@@ -56,7 +56,7 @@ void loop() {
    myservo3.write(0); //pull string to pull prince down
 
  }else {
-   myservo3.write(90);
+   myservo3.write(180);
  }
 
  //face change interaction
